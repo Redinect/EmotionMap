@@ -5,9 +5,10 @@ import checkAuth from "./utils/checkAuth.js"
 import * as UserController from "./controllers/UserController.js"
 import * as TaskController from "./controllers/TaskController.js"
 
+
 //Connect Database
 mongoose
-    .connect(process.env.API_URL)
+    .connect( "mongodb+srv://admin:admin@cluster0.mwrpo11.mongodb.net/Emojicon?retryWrites=true&w=majority")
     .then(() => console.log("DB is OK"))
     .catch((err) => console.log("DB error", err));
 
