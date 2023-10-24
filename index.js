@@ -8,8 +8,8 @@ import * as TaskController from "./controllers/TaskController.js"
 
 //Connect Database
 mongoose
-    .connect("mongodb+srv://admin:admin@cluster0.mwrpo11.mongodb.net/Emojicon?retryWrites=true&w=majority");
-    .then(() => console.log("DB is OK"));
+    .connect("mongodb+srv://admin:admin@cluster0.mwrpo11.mongodb.net/Emojicon?retryWrites=true&w=majority")
+    .then(() => console.log("DB is OK"))
     .catch((err) => console.log("DB error", err));
 
 const app = express();
