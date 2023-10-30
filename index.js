@@ -1,4 +1,5 @@
 import express from "express"; 
+import cors from "cors";
 import mongoose from "mongoose";
 import { registerValidation, loginValidation } from "./validations.js";
 import checkAuth from "./utils/checkAuth.js"
@@ -14,6 +15,14 @@ mongoose
 
 const app = express();
 app.use(express.json());
+
+// Cors setup
+const corsOptions = {
+    origin: 'https://emotion-map.ru',
+    optionSuccessStatus: 200, // для старых браузеров и SmartTV
+  };
+  
+app.use(cors(corsOptions));
 
 //Start server
 app.listen(4444, (err) => {
