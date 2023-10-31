@@ -14,15 +14,16 @@ mongoose
     .catch((err) => console.log("DB error", err));
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // Cors setup
-const corsOptions = {
-    origin: 'http://emotion-map.ru',
-    optionSuccessStatus: 200, // для старых браузеров и SmartTV
-  };
+// const corsOptions = {
+//     origin: 'http://emotion-map.ru',
+//     optionSuccessStatus: 200, // для старых браузеров и SmartTV
+//   };
   
-app.use(cors(corsOptions));
+
 
 //Start server
 app.listen(4444, (err) => {
