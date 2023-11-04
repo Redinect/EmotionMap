@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import cors from "cors";
 import { validationResult } from "express-validator"
 import UserSchema from "../models/user.js";
 
@@ -99,9 +100,17 @@ export const getMe = async (req, res) => {
         }
         const { passwordHash, ...userData } = user._doc;
 
+        res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
         res.json(userData);
     }catch (err){
         console.log(err);
+
+        res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+
         res.status(500).json({
             message: "Не удалось проверить пользователя",
         });
