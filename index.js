@@ -19,14 +19,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Cors setup
-// const corsOptions = {
-//     origin: 'http://emotion-map.ru',
-//     optionSuccessStatus: 200, // для старых браузеров и SmartTV
-//   };
-  
-
-
 //Start server
 app.listen(4444, (err) => {
     if (err){
